@@ -1,0 +1,19 @@
+{
+  "name": "francosalinasmendoza",
+  "version": "1.0.0",
+  "description": "Franco Javier Salinas Mendoza personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fsalinasmendoza@bitbucket.org/fsalinasmendoza/francosalinasmendoza.git"
+  },
+  "author": "Franco Javier Salinas Mendoza",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fsalinasmendoza/francosalinasmendoza#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
