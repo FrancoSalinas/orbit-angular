@@ -4,6 +4,7 @@ var gulp         = require('gulp');
 var less         = require('gulp-less');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
+var copy         = require('gulp-copy');
 var runSequence  = require('run-sequence');
 var browserSync  = require('browser-sync');
 
@@ -32,9 +33,22 @@ gulp.task('serve', function() {
 gulp.task('less', [], function() {
   return gulp.src('./assets/less/default/styles.less')
   .pipe(less())
-  .pipe(gulp.dest('./assets/css'))
+  .pipe(gulp.dest('./css'))
   .on('end', browserSync.reload);
 });
+
+gulp.task('setup', [], function() {
+  /* Set up awesome font. */
+  gulp.src('./bower_components/components-font-awesome/fonts/*.*')
+  .pipe(gulp.dest('./fonts'));
+
+  gulp.src('./bower_components/components-font-awesome/css/font-awesome.min.css')
+  .pipe(gulp.dest('./css'));
+
+  /* Set up bootstrap css.  */
+  gulp.src('./bower_components/bootstrap-css-only/css/bootstrap.min.css')
+  .pipe(gulp.dest('./css'));
+})
 
 gulp.task('build', [], function() {
   runSequence('js', 'less');
