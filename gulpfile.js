@@ -26,12 +26,12 @@ gulp.task('serve', function() {
     }
   });
   
-  gulp.watch("./assets/less/default/*.less", ['less']);
+  gulp.watch("./less/default/*.less", ['less']);
   gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 gulp.task('less', [], function() {
-  return gulp.src('./assets/less/default/styles.less')
+  return gulp.src('./less/default/styles.less')
   .pipe(less())
   .pipe(gulp.dest('./css'))
   .on('end', browserSync.reload);
