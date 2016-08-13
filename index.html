@@ -28,30 +28,30 @@
     <![endif]-->
 </head> 
 
-<body ng-app="francoSalinasMendoza" ng-controller="MainCtrl">
+<body ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main">
     <div class="wrapper">
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <img class="profile" src="imgs/profile.png" alt="Foto de perfil" />
-                <h1 class="name">{{name}}</h1>
-                <h3 class="tagline">{{tagline}}</h3>
+                <h1 class="name">{{main.name}}</h1>
+                <h3 class="tagline">{{main.tagline}}</h3>
             </div><!--//profile-container-->
             
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li ng-repeat="address in addresses"><i class="fa {{address.icon}}"></i><a ng-href="{{address.link}}">{{address.show}}</a></li>
+                    <li ng-repeat="address in main.addresses"><i class="fa {{address.icon}}"></i><a ng-href="{{address.link}}">{{address.show}}</a></li>
                 </ul>
             </div><!--//contact-container-->
             <div class="resume-container container-block">
-                <h2 class="container-block-title">{{curriculum}}</h2>
-                <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in curriculum_list">
+                <h2 class="container-block-title">{{main.curriculum}}</h2>
+                <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in main.curriculum_list">
                     <li><a href="{{curriculum.link}}">{{curriculum.name}}</a></li>
                 </ul>
             </div><!--//education-container-->
 
             <div class="education-container container-block">
-                <h2 class="container-block-title">{{education}}</h2>
-                <div class="item" ng-repeat="degree in degrees">
+                <h2 class="container-block-title">{{main.education}}</h2>
+                <div class="item" ng-repeat="degree in main.degrees">
                     <h4 class="degree">{{degree.name}}</h4>
                     <h5 class="meta">{{degree.where}}</h5>
                     <div class="time">{{degree.when}}</div>
@@ -59,16 +59,16 @@
             </div><!--//education-container-->
             
             <div class="languages-container container-block">
-                <h2 class="container-block-title">{{languages}}</h2>
+                <h2 class="container-block-title">{{main.languages}}</h2>
                 <ul class="list-unstyled interests-list">
-                    <li ng-repeat="language in language_list">{{language.name}} <span class="lang-desc">({{language.level}})</span></li>
+                    <li ng-repeat="language in main.language_list">{{language.name}} <span class="lang-desc">({{language.level}})</span></li>
                 </ul>
             </div><!--//interests-->
             
             <div class="interests-container container-block">
-                <h2 class="container-block-title">{{interests}}</h2>
+                <h2 class="container-block-title">{{main.interests}}</h2>
                 <ul class="list-unstyled interests-list">
-                    <li ng-repeat="interest in interest_list">{{interest}}</li>
+                    <li ng-repeat="interest in main.interest_list">{{interest}}</li>
                 </ul>
             </div><!--//interests-->
             
@@ -76,15 +76,15 @@
         
         <div class="main-wrapper">
             <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i>{{about_me.title}}</h2>
+                <h2 class="section-title"><i class="fa fa-user"></i>{{main.about_me.title}}</h2>
                 <div class="summary">
-                    <p>{{about_me.paragraph}}</p>
+                    <p>{{main.about_me.paragraph}}</p>
                 </div><!--//summary-->
             </section><!--//section-->
             
             <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i>{{experience}}</h2>                
-                <div class="item" ng-repeat="experience in experience_list">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>{{main.experience}}</h2>                
+                <div class="item" ng-repeat="experience in main.experience_list">
                     <div class="meta">
                         <div class="upper-row">
                             <h3 class="job-title">{{experience.position}}</h3>
@@ -98,17 +98,17 @@
                 </div><!--//item-->      
             </section><!--//section-->   
             <section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i>{{projects}}</h2>
-                <div class="item" id="{{project.name}}" ng-repeat="project in project_list">
+                <h2 class="section-title"><i class="fa fa-archive"></i>{{main.projects}}</h2>
+                <div class="item" id="{{main.project.name}}" ng-repeat="project in main.project_list">
                     <h3 class="project-title"><a ng-href="{{project.link}}">{{project.name}}</a></h3>
                     <p ng-bind-html="project.description"></p>                 
                 </div><!--//item-->
             </section><!--//section-->
             
             <section class="skills-section section">
-                <h2 class="section-title"><i class="fa fa-rocket"></i>{{skills}}</h2>
+                <h2 class="section-title"><i class="fa fa-rocket"></i>{{main.skills}}</h2>
                 <div class="skillset">        
-                    <div class="item" ng-repeat="skill in skill_list">
+                    <div class="item" ng-repeat="skill in main.skill_list">
                         <h3 class="level-title">{{skill.name}}</h3>
                         <uib-progressbar value="skill.level"></uib-progressbar>                
                     </div><!--//item-->

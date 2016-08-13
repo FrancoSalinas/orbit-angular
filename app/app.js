@@ -1,12 +1,11 @@
 var app = angular.module('francoSalinasMendoza', ['ui.bootstrap']);
 
 app.controller('MainCtrl', [
-    '$scope',
     '$sce',
-    function($scope, $sce){
-        $scope.name = "Franco Javier Salinas Mendoza";
-        $scope.tagline = "Ingeniero en Computación";
-        $scope.addresses = [
+    function($sce){
+        this.name = "Franco Javier Salinas Mendoza";
+        this.tagline = "Ingeniero en Computación";
+        this.addresses = [
             {
                 icon : "fa fa-envelope",
                 show : "franco.salinas.mendoza@gmail.com",
@@ -23,8 +22,8 @@ app.controller('MainCtrl', [
                 link : "https://www.linkedin.com/in/francosalinasmendoza"
             },
         ];
-        $scope.curriculum = "Curriculum";
-        $scope.curriculum_list = [
+        this.curriculum = "Curriculum";
+        this.curriculum_list = [
             {
                 name : "English",
                 link : "resume/cvfsalinasmendoza-en.pdf"
@@ -34,16 +33,16 @@ app.controller('MainCtrl', [
                 link : "resume/cvfsalinasmendoza-es.pdf"
             }
         ];
-        $scope.education = "Educación";
-        $scope.degrees = [
+        this.education = "Educación";
+        this.degrees = [
             {
-                name : "Ingeiería en Computación",
+                name : "Ingeniería en Computación",
                 where : "Universidad Nacional de Tucumán",
                 when : "2010 - 2016"
             }
         ];
-        $scope.languages = "Idiomas";
-        $scope.language_list = [
+        this.languages = "Idiomas";
+        this.language_list = [
             {
                 name : "Español",
                 level : "Nativo"
@@ -57,14 +56,14 @@ app.controller('MainCtrl', [
                 level : "Básico"
             }
         ];
-        $scope.interests = "Intereses";
-        $scope.interest_list = [
+        this.interests = "Intereses";
+        this.interest_list = [
             "Guitarra",
             "Natación",
             "Cine",
             "Cocina"
         ];
-        $scope.about_me = {
+        this.about_me = {
             title : "Perfil",
             paragraph : "Soy un ingeniero en computación entusiasta del " +
                         "desarrollo, radicado en Tucumán, Argentina. A " +
@@ -78,8 +77,8 @@ app.controller('MainCtrl', [
                         "libre. Me gustan la música, el cine, la natación " +
                         "y suelo ser asador designado. "
         };
-        $scope.experience = "Experiencia";
-        $scope.experience_list = [
+        this.experience = "Experiencia";
+        this.experience_list = [
             {
                 position : "Desarrollador",
                 when : "2015 - Presente",
@@ -131,8 +130,8 @@ app.controller('MainCtrl', [
                 )                
             }
         ];
-        $scope.projects = "Proyectos Personales";
-        $scope.project_list = [
+        this.projects = "Proyectos Personales";
+        this.project_list = [
             {
                 name : "µFuzzy",
                 link : "https://bitbucket.org/fsalinasmendoza/fuzzy/overview",
@@ -159,8 +158,8 @@ app.controller('MainCtrl', [
                 )
             }
         ];
-        $scope.skills = "Conocimientos";
-        $scope.skill_list = [
+        this.skills = "Conocimientos";
+        this.skill_list = [
             {
                 name : "C & Ceedling",
                 level : 97
