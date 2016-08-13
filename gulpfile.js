@@ -13,7 +13,7 @@ gulp.task('js', function(){
     './bower_components/angular/angular.js',
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
 
-    './assets/js/app.js'])
+    './app/app.js'])
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./js'))
