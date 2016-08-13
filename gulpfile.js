@@ -10,8 +10,8 @@ var browserSync  = require('browser-sync');
 
 gulp.task('js', function(){
   return gulp.src([
-    './bower_components/angular/angular.js',
-    './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+    './bower_components/angular/angular.min.js',
+    './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
 
     './app/app.js'])
     .pipe(concat('app.min.js'))
@@ -27,7 +27,14 @@ gulp.task('serve', function() {
   });
   
   gulp.watch("./less/default/*.less", ['less']);
-  gulp.watch("./*.html").on('change', browserSync.reload);
+
+  gulp.watch("./*.html")
+  .on('change', browserSync.reload);
+
+  gulp.watch("./app/app.js", ['js']);
+
+  gulp.watch("./js/app.min.js")
+  .on('change', browserSync.reload);
 });
 
 gulp.task('less', [], function() {
