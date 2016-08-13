@@ -1,5 +1,3 @@
-'use_strict';
-
 var app = angular.module('francoSalinasMendoza', ['ui.bootstrap']);
 
 app.controller('MainCtrl', [
@@ -128,7 +126,7 @@ app.controller('MainCtrl', [
                     "para la <a href='http://proyecto-ciaa.com.ar/'> " +
                     "CIAA</a>. Diseñador del protocolo de actualización. " +
                     "Capacitador de nuevos pasantes. Diseñador y " +
-                    "desarrollador de un <a href='#ufuzzy'>módulo de " + 
+                    "desarrollador de un <a href='#µFuzzy'>módulo de " + 
                     "lógica difusa</a>."
                 )                
             }
@@ -160,6 +158,7 @@ app.controller('MainCtrl', [
                     "disponible."
                 )
             }
-        ]
+        ];
+        $scope.skills = "Conocimientos";
     }
 ]);
