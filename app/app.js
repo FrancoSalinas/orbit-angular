@@ -160,5 +160,27 @@ app.controller('MainCtrl', [
             }
         ];
         $scope.skills = "Conocimientos";
+        $scope.skill_list = [
+            {
+                name : "C & Ceedling",
+                level : 97
+            },
+            {
+                name : "Python",
+                level : 92
+            },
+            {
+                name : "MySQL sqlite",
+                level : 85
+            },
+            {
+                name : "C++ Haxe Java PHP",
+                level : 82
+            },
+            {
+                name : "Angular & Node",
+                level : 60
+            }
+        ];
     }
 ]);

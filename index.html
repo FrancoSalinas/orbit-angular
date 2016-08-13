@@ -108,29 +108,9 @@
             <section class="skills-section section">
                 <h2 class="section-title"><i class="fa fa-rocket"></i>{{skills}}</h2>
                 <div class="skillset">        
-                    <div class="item">
-                        <h3 class="level-title">C & Ceedling</h3>
-                        <uib-progressbar value="97"></uib-progressbar>                
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Python</h3>
-                        <uib-progressbar value="92"></uib-progressbar>                                 
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">MySQL & sqlite</h3>
-                        <uib-progressbar value="85"></uib-progressbar>                                 
-                    </div><!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">C++/Haxe/Java/PHP</h3>
-                        <uib-progressbar value="82"></uib-progressbar>                                 
-                    </div><!--//item-->                    
-                    
-                    <div class="item">
-                        <h3 class="level-title">Angular & Node</h3>
-                        <uib-progressbar value="60"></uib-progressbar>                        
+                    <div class="item" ng-repeat="skill in skill_list">
+                        <h3 class="level-title">{{skill.name}}</h3>
+                        <uib-progressbar value="skill.level"></uib-progressbar>                
                     </div><!--//item-->
                 </div>  
             </section><!--//skills-section-->
