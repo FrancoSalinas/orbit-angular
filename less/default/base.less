@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6  {
 }
 
 a {
-    color: darken(@theme-color, 15%);
+    color: @theme-color;
     .transition (all 0.4s ease-in-out);
     &:hover {
         text-decoration: underline;
@@ -81,11 +81,6 @@ p {
             margin-bottom: 15px;
             &:last-child {
                 margin-bottom: 0;
-            }
-        }
-        .email {
-            .fa {
-                font-size: 14px;
             }
         }
     }

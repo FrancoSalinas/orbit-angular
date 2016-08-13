@@ -28,164 +28,80 @@
     <![endif]-->
 </head> 
 
-<body ng-app="francoSalinasMendoza">
+<body ng-app="francoSalinasMendoza" ng-controller="MainCtrl">
     <div class="wrapper">
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <img class="profile" src="imgs/profile.png" alt="Foto de perfil" />
-                <h1 class="name">Franco Javier Salinas Mendoza</h1>
-                <h3 class="tagline">Ingeniero en Computación</h3>
+                <h1 class="name">{{name}}</h1>
+                <h3 class="tagline">{{tagline}}</h3>
             </div><!--//profile-container-->
             
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto: franco.salinas.mendoza@gmail.com">franco.salinas.mendoza@gmail.com</a></li>
-                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:+5493816705080">+549381 670 5080 </a></li>
-                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/francosalinasmendoza" target="_blank">linkedin.com/in/francosalinasmendoza</a></li>
+                    <li ng-repeat="address in addresses"><i class="fa {{address.icon}}"></i><a ng-href="{{address.link}}">{{address.show}}</a></li>
                 </ul>
             </div><!--//contact-container-->
             <div class="resume-container container-block">
-                <h2 class="container-block-title">Curriculum / Resume</h2>
-                <ul class="list-unstyled curriculum-list">
-                    <li><a href="resume/cvfsalinasmendoza-es.pdf">Español</a></li>
-                    <li><a href="resume/cvfsalinasmendoza-en.pdf">English</a></li>
+                <h2 class="container-block-title">{{curriculum}}</h2>
+                <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in curriculum_list">
+                    <li><a href="{{curriculum.link}}">{{curriculum.name}}</a></li>
                 </ul>
             </div><!--//education-container-->
 
             <div class="education-container container-block">
-                <h2 class="container-block-title">Educación</h2>
-                <div class="item">
-                    <h4 class="degree">Ingeniería en Computación</h4>
-                    <h5 class="meta">Universidad Nacional de Tucumán</h5>
-                    <div class="time">2010 - 2016</div>
+                <h2 class="container-block-title">{{education}}</h2>
+                <div class="item" ng-repeat="degree in degrees">
+                    <h4 class="degree">{{degree.name}}</h4>
+                    <h5 class="meta">{{degree.where}}</h5>
+                    <div class="time">{{degree.when}}</div>
                 </div><!--//item-->
             </div><!--//education-container-->
             
             <div class="languages-container container-block">
-                <h2 class="container-block-title">Idiomas</h2>
+                <h2 class="container-block-title">{{languages}}</h2>
                 <ul class="list-unstyled interests-list">
-                    <li>Español <span class="lang-desc">(Nativo)</span></li>
-                    <li>Inglés <span class="lang-desc">(Avanzado)</span></li>
-                    <li>Francés <span class="lang-desc">(Básico)</span></li>
+                    <li ng-repeat="language in language_list">{{language.name}} <span class="lang-desc">({{language.level}})</span></li>
                 </ul>
             </div><!--//interests-->
             
             <div class="interests-container container-block">
-                <h2 class="container-block-title">Intereses</h2>
+                <h2 class="container-block-title">{{interests}}</h2>
                 <ul class="list-unstyled interests-list">
-                    <li>Gutiarra</li>
-                    <li>Natación</li>
-                    <li>Cine</li>
-                    <li>Cocina <span class="interests-desc"></span></li>
+                    <li ng-repeat="interest in interest_list">{{interest}}</li>
                 </ul>
             </div><!--//interests-->
             
         </div><!--//sidebar-wrapper-->
         
         <div class="main-wrapper">
-            
             <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i>Perfil</h2>
+                <h2 class="section-title"><i class="fa fa-user"></i>{{about_me.title}}</h2>
                 <div class="summary">
-                    <p>
-                        Soy un ingeniero en computación entusiasta del desarrollo, radicado en Tucumán, Argentina. A
-                        pesar de haber participado en proyectos de hardware, el software es el área en la que mejor me
-                        desenvuelvo. Me interesan las aplicaciones web, la robótica y la inteligencia artificial. El
-                        desarrollo de videojuegos fue lo que me atrajo inicialmente a esta profesión y es una de las
-                        actividades a las que dedico mi tiempo libre. Me gustan la música, el cine, la natación y
-                        suelo ser asador designado. </p>
+                    <p>{{about_me.paragraph}}</p>
                 </div><!--//summary-->
             </section><!--//section-->
             
             <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiencia</h2>
-                
-                <div class="item">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>{{experience}}</h2>                
+                <div class="item" ng-repeat="experience in experience_list">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Desarrollador</h3>
-                            <div class="time">2015 - Presente</div>
+                            <h3 class="job-title">{{experience.position}}</h3>
+                            <div class="time">{{experience.when}}</div>
                         </div><!--//upper-row-->
-                        <div class="company">DIGICOM, Tucumán</div>
+                        <div class="company">{{experience.where}}</div>
                     </div><!--//meta-->
                     <div class="details">
-                        <p>
-                            Responsable del diseño y desarrollo de una nueva generación de
-                            <a href="https://es.wikipedia.org/wiki/Unidad_Terminal_Remota">RTUs</a> programadas en
-                            Python, y de su software de configuración.</p>
+                        <p ng-bind-html="experience.description"></p>
                     </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Ayudante Estudiantil</h3>
-                            <div class="time">2014 - 2016</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Facultad de Ciencias Exactas y Tecnología, UNT</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Ayudante en las cátedras de Diseño Lógico I, y Sistemas con Microprocesadores y
-                            Microcontroladores. Responsable de grupos de hasta 12 estudiantes simultáneamente.
-                        </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Líder de Equipo de Desarrollo</h3>
-                            <div class="time">2013 - 2015</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Grupo de Robótica, FACET UNT</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Promotor y líder de equipo en el desarrollo de un
-                            <a href="https://www.youtube.com/watch?v=J6u_ZPMQlAQ"> robot móvil autónomo terrestre para
-                            resolución de laberintos</a>. Diseñador y desarrollador de firmware y de estrategias de
-                            inteligencia artificial. Capacitador de nuevos integrantes. Diseñador de futuras versiones
-                            de hardware.
-                        </p>  
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Colaborador del Proyecto CIAA</h3>
-                            <div class="time">2014 - Presente</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Pasantía, FACET UNT / Independiente</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Co-diseñador de la arquitectura de un bootloader para la
-                            <a href="http://proyecto-ciaa.com.ar/"> CIAA</a>. Diseñador del protocolo de actualización.
-                            Capacitador de nuevos pasantes. Diseñador y desarrollador de un
-                            <a href="#ufuzzy">módulo de lógica difusa</a>.
-                        </p>  
-                    </div><!--//details-->
-                </div><!--//item-->
-            </section><!--//section-->
-            
+                </div><!--//item-->      
+            </section><!--//section-->   
             <section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i>Proyectos Personales</h2>
-                <div class="item" id="ufuzzy">
-                    <span class="project-title">
-                        <a href="https://bitbucket.org/fsalinasmendoza/fuzzy/overview">µFuzzy</a>
-                    </span> - <span class="project-tagline"> Una librería de lógica difusa desarrollada en C, altamente
-                    eficiente pensada para embebidos de bajo costo independientemente de su arquitectura. Esta librería
-                    se formó parte de mi <a href="ufuzzy/Trabajo%20de%20Graduacion.pdf">trabajo de graduación</a> y
-                    próximamente será incorporada al proyecto
-                    <a href="http://www.proyecto-ciaa.com.ar/devwiki/doku.php?id=desarrollo:firmware:ufuzzy">CIAA</a>.</span>                    
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title">sandwich</span> - <span class="project-tagline">Juego casual en
-                        desarrollo para móviles, en el que me desempeño como diseñador, programador y artista gráfico. 
-                        <a href="sandwich/">Prototipo web</a> disponible.
-                    </span>                    
+                <h2 class="section-title"><i class="fa fa-archive"></i>{{projects}}</h2>
+                <div class="item" id="{{project.name}}" ng-repeat="project in project_list">
+                    <h3 class="project-title"><a ng-href="{{project.link}}">{{project.name}}</a></h3>
+                    <p ng-bind-html="project.description"></p>                 
                 </div><!--//item-->
             </section><!--//section-->
             
@@ -193,8 +109,8 @@
                 <h2 class="section-title"><i class="fa fa-rocket"></i>Conocimientos</h2>
                 <div class="skillset">        
                     <div class="item">
-                        <h3 class="level-title">C</h3>
-                        <uib-progressbar value="98"></uib-progressbar>                
+                        <h3 class="level-title">C & Ceedling</h3>
+                        <uib-progressbar value="97"></uib-progressbar>                
                     </div><!--//item-->
                     
                     <div class="item">
@@ -203,19 +119,19 @@
                     </div><!--//item-->
                     
                     <div class="item">
-                        <h3 class="level-title">Javascript</h3>
-                        <uib-progressbar value="87"></uib-progressbar>                        
+                        <h3 class="level-title">MySQL & sqlite</h3>
+                        <uib-progressbar value="85"></uib-progressbar>                                 
                     </div><!--//item-->
 
                     <div class="item">
-                        <h3 class="level-title">OOP - C++/Java/Haxe</h3>
-                        <uib-progressbar value="85"></uib-progressbar>                                 
-                    </div><!--//item-->
+                        <h3 class="level-title">C++/Haxe/Java/PHP</h3>
+                        <uib-progressbar value="82"></uib-progressbar>                                 
+                    </div><!--//item-->                    
                     
                     <div class="item">
-                        <h3 class="level-title">HTML5/CSS3/PHP/MySQL</h3>
-                        <uib-progressbar value="80"></uib-progressbar>                                 
-                    </div><!--//item-->                    
+                        <h3 class="level-title">Angular & Node</h3>
+                        <uib-progressbar value="60"></uib-progressbar>                        
+                    </div><!--//item-->
                 </div>  
             </section><!--//skills-section-->
             
