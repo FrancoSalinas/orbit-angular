@@ -1,4 +1,19 @@
-var app = angular.module('francoSalinasMendoza', ['ui.bootstrap']);
+var app = angular.module('francoSalinasMendoza', [
+    'ui.bootstrap',
+    'ngSanitize',
+    'pascalprecht.translate'
+]);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+  $translateProvider
+  .useStaticFilesLoader({
+    prefix: '/i18n/',
+    suffix: '.json'
+  })
+  .useSanitizeValueStrategy('sanitizeParameters')
+  .preferredLanguage('es');
+}]);
 
 app.controller('MainCtrl', [
     '$sce',
@@ -22,7 +37,6 @@ app.controller('MainCtrl', [
                 link : "https://www.linkedin.com/in/francosalinasmendoza"
             },
         ];
-        this.curriculum = "Curriculum";
         this.curriculum_list = [
             {
                 name : "English",
@@ -33,7 +47,6 @@ app.controller('MainCtrl', [
                 link : "resume/cvfsalinasmendoza-es.pdf"
             }
         ];
-        this.education = "Educación";
         this.degrees = [
             {
                 name : "Ingeniería en Computación",
@@ -41,7 +54,6 @@ app.controller('MainCtrl', [
                 when : "2010 - 2016"
             }
         ];
-        this.languages = "Idiomas";
         this.language_list = [
             {
                 name : "Español",
@@ -56,16 +68,13 @@ app.controller('MainCtrl', [
                 level : "Básico"
             }
         ];
-        this.interests = "Intereses";
         this.interest_list = [
             "Guitarra",
             "Natación",
             "Cine",
             "Cocina"
         ];
-        this.about_me = {
-            title : "Perfil",
-            paragraph : "Soy un ingeniero en computación entusiasta del " +
+        this.about_me = "Soy un ingeniero en computación entusiasta del " +
                         "desarrollo, radicado en Tucumán, Argentina. A " +
                         "pesar de haber participado en proyectos de " +
                         "hardware, el software es el área en la que mejor " +
@@ -75,9 +84,7 @@ app.controller('MainCtrl', [
                         "atrajo inicialmente a esta profesión y es una de " +
                         "las actividades a las que dedico mi tiempo " +
                         "libre. Me gustan la música, el cine, la natación " +
-                        "y suelo ser asador designado. "
-        };
-        this.experience = "Experiencia";
+                        "y suelo ser asador designado. ";
         this.experience_list = [
             {
                 position : "Desarrollador",
@@ -130,7 +137,6 @@ app.controller('MainCtrl', [
                 )                
             }
         ];
-        this.projects = "Proyectos Personales";
         this.project_list = [
             {
                 name : "µFuzzy",
@@ -158,7 +164,6 @@ app.controller('MainCtrl', [
                 )
             }
         ];
-        this.skills = "Conocimientos";
         this.skill_list = [
             {
                 name : "C & Ceedling",

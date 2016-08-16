@@ -12,7 +12,11 @@ gulp.task('js', function(){
   return gulp.src([
     './bower_components/angular/angular.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-
+    './bower_components/angular-sanitize/angular-sanitize.min.js',
+    './bower_components/angular-translate/angular-translate.min.js',
+    './bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+    './bower_components/angular-sanitize/angular-sanitize.min.js',
+    
     './app/app.js'])
     .pipe(concat('app.min.js'))
     .pipe(uglify())

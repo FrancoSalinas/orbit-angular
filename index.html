@@ -44,14 +44,14 @@
             </div><!--//contact-container-->
 
             <div class="resume-container container-block">
-                <h2 class="container-block-title" ng-bind="main.curriculum"></h2>
+                <h2 class="container-block-title" translate="curriculum"></h2>
                 <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in main.curriculum_list">
                     <li><a ng-href="{{curriculum.link}}" ng-bind="curriculum.name"></a></li>
                 </ul>
             </div><!--//education-container-->
 
             <div class="education-container container-block">
-                <h2 class="container-block-title" ng-bind="main.education"></h2>
+                <h2 class="container-block-title" translate="education"></h2>
                 <div class="item" ng-repeat="degree in main.degrees">
                     <h4 class="degree" ng-bind="degree.name"></h4>
                     <h5 class="meta" ng-bind="degree.where"></h5>
@@ -60,7 +60,7 @@
             </div><!--//education-container-->
             
             <div class="languages-container container-block">
-                <h2 class="container-block-title" ng-bind="main.languages"></h2>
+                <h2 class="container-block-title" translate="languages"></h2>
                 <ul class="list-unstyled interests-list">
                     <li ng-repeat="language in main.language_list">
                         <span ng-bind="language.name"></span> <span class="lang-desc" ng-bind="language.level"></span>
@@ -69,7 +69,7 @@
             </div><!--//interests-->
             
             <div class="interests-container container-block">
-                <h2 class="container-block-title" ng-bind="main.interests"></h2>
+                <h2 class="container-block-title" translate="interests"></h2>
                 <ul class="list-unstyled interests-list">
                     <li ng-repeat="interest in main.interest_list" ng-bind="interest"></li>
                 </ul>
@@ -79,14 +79,14 @@
         
         <div class="main-wrapper">
             <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i><span ng-bind="main.about_me.title"></span></h2>
+                <h2 class="section-title"><i class="fa fa-user"></i><span translate="about me"></span></h2>
                 <div class="summary">
-                    <p ng-bind="main.about_me.paragraph"></p>
+                    <p ng-bind="main.about_me"></p>
                 </div><!--//summary-->
             </section><!--//section-->
             
             <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i><span ng-bind="main.experience"></span></h2>                
+                <h2 class="section-title"><i class="fa fa-briefcase"></i><span translate="experience"></span></h2>                
                 <div class="item" ng-repeat="experience in main.experience_list">
                     <div class="meta">
                         <div class="upper-row">
@@ -101,7 +101,7 @@
                 </div><!--//item-->      
             </section><!--//section-->   
             <section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i><span ng-bind="main.projects"></span></h2>
+                <h2 class="section-title"><i class="fa fa-archive"></i><span translate="projects"></span></h2>
                 <div class="item" id="{{main.project.name}}" ng-repeat="project in main.project_list">
                     <h3 class="project-title"><a ng-href="{{project.link}}" ng-bind="project.name"></a></h3>
                     <p ng-bind-html="project.description"></p>                 
@@ -109,7 +109,7 @@
             </section><!--//section-->
             
             <section class="skills-section section">
-                <h2 class="section-title"><i class="fa fa-rocket"></i><span ng-bind="main.skills"></span></h2>
+                <h2 class="section-title"><i class="fa fa-rocket"></i><span translate="skills"></span></h2>
                 <div class="skillset">        
                     <div class="item" ng-repeat="skill in main.skill_list">
                         <h3 class="level-title" ng-bind="skill.name"></h3>
@@ -124,7 +124,7 @@
     <footer class="footer">
         <div class="text-center">
                 <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">This work, "orbit-angular", is a derivative of the <a href="http://themes.3rdwavemedia.com" target="_blank">Orbit theme</a> by Xiaoying Riley, used under CC BY. "orbit-angular" is licensed under CC BY by Franco J. Salinas Mendoza.</small>
+                <small class="copyright" translate="copyright"></small>
         </div><!--//container-->
     </footer><!--//footer-->
 </body>
