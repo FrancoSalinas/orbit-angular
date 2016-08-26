@@ -8,7 +8,7 @@ app.config(['$translateProvider', function($translateProvider) {
 
   $translateProvider
   .useStaticFilesLoader({
-    prefix: '/i18n/',
+    prefix: '/objects/',
     suffix: '.json'
   })
   .useSanitizeValueStrategy('sanitizeParameters')
