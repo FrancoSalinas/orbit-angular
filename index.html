@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html class="ie8" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->  
+<!--[if IE 9]> <html class="ie9" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->  
+<!--[if !IE]><!--> <html ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}"> <!--<![endif]-->  
 <head>
     <title>Franco Salinas Mendoza</title>
     <!-- Meta -->
@@ -28,31 +28,31 @@
     <![endif]-->
 </head> 
 
-<body ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main">
+<body>
     <div class="wrapper">
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <img class="profile" src="imgs/profile.png" alt="Foto de perfil" />
-                <h1 class="name" ng-bind="main.name"></h1>
-                <h3 class="tagline" ng-bind="main.tagline"></h3>
+                <h1 class="name" ng-bind="main.content.name"></h1>
+                <h3 class="tagline" ng-bind="main.content.tagline"></h3>
             </div><!--//profile-container-->
             
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li ng-repeat="address in main.addresses"><i ng-class="'fa ' + address.icon"></i><a ng-href="{{address.link}}" ng-bind="address.show"></a></li>
+                    <li ng-repeat="address in main.content.addresses"><i ng-class="'fa ' + address.icon"></i><a ng-href="{{address.link}}" ng-bind="address.show"></a></li>
                 </ul>
             </div><!--//contact-container-->
 
             <div class="resume-container container-block">
                 <h2 class="container-block-title" translate="curriculum"></h2>
-                <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in main.curriculum_list">
+                <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in main.content.curriculum_list">
                     <li><a ng-href="{{curriculum.link}}" ng-bind="curriculum.name"></a></li>
                 </ul>
             </div><!--//education-container-->
 
             <div class="education-container container-block">
                 <h2 class="container-block-title" translate="education"></h2>
-                <div class="item" ng-repeat="degree in main.degrees">
+                <div class="item" ng-repeat="degree in main.content.degrees">
                     <h4 class="degree" ng-bind="degree.name"></h4>
                     <h5 class="meta" ng-bind="degree.where"></h5>
                     <div class="time" ng-bind="degree.when"></div>
@@ -62,7 +62,7 @@
             <div class="languages-container container-block">
                 <h2 class="container-block-title" translate="languages"></h2>
                 <ul class="list-unstyled interests-list">
-                    <li ng-repeat="language in main.language_list">
+                    <li ng-repeat="language in main.content.language_list">
                         <span ng-bind="language.name"></span> <span class="lang-desc" ng-bind="language.level"></span>
                     </li>
                 </ul>
@@ -71,7 +71,7 @@
             <div class="interests-container container-block">
                 <h2 class="container-block-title" translate="interests"></h2>
                 <ul class="list-unstyled interests-list">
-                    <li ng-repeat="interest in main.interest_list" ng-bind="interest"></li>
+                    <li ng-repeat="interest in main.content.interest_list" ng-bind="interest"></li>
                 </ul>
             </div><!--//interests-->
             
@@ -81,13 +81,13 @@
             <section class="section summary-section">
                 <h2 class="section-title"><i class="fa fa-user"></i><span translate="about me"></span></h2>
                 <div class="summary">
-                    <p ng-bind="main.about_me"></p>
+                    <p ng-bind="main.content.about_me"></p>
                 </div><!--//summary-->
             </section><!--//section-->
             
             <section class="section experiences-section">
                 <h2 class="section-title"><i class="fa fa-briefcase"></i><span translate="experience"></span></h2>                
-                <div class="item" ng-repeat="experience in main.experience_list">
+                <div class="item" ng-repeat="experience in main.content.experience_list">
                     <div class="meta">
                         <div class="upper-row">
                             <h3 class="job-title" ng-bind="experience.position"></h3>
@@ -102,7 +102,7 @@
             </section><!--//section-->   
             <section class="section projects-section">
                 <h2 class="section-title"><i class="fa fa-archive"></i><span translate="projects"></span></h2>
-                <div class="item" id="{{main.project.name}}" ng-repeat="project in main.project_list">
+                <div class="item" id="{{main.content.project.name}}" ng-repeat="project in main.content.project_list">
                     <h3 class="project-title"><a ng-href="{{project.link}}" ng-bind="project.name"></a></h3>
                     <p ng-bind-html="project.description"></p>                 
                 </div><!--//item-->
@@ -111,7 +111,7 @@
             <section class="skills-section section">
                 <h2 class="section-title"><i class="fa fa-rocket"></i><span translate="skills"></span></h2>
                 <div class="skillset">        
-                    <div class="item" ng-repeat="skill in main.skill_list">
+                    <div class="item" ng-repeat="skill in main.content.skill_list">
                         <h3 class="level-title" ng-bind="skill.name"></h3>
                         <uib-progressbar value="skill.level"></uib-progressbar>                
                     </div><!--//item-->
