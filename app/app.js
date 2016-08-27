@@ -38,10 +38,7 @@ app.controller('MainCtrl', [
                 controller.content = data;
             })
             .error(function(data, status, error, config) {
-                $http.get("objects/content.json")
-                .success(function(data) {
-                    controller.content = data;
-                });
+                alert("couldn't laod content.");
             });
             
         }
