@@ -255,14 +255,24 @@ p {
 }
 .footer {
   padding: 30px;
-  padding-top: 60px;
+  padding-bottom: 0;
 }
-.footer .copyright {
+.footer .text-center {
+  margin-bottom: 10px;
+}
+.footer .text-center:last-child {
+  margin-bottom: 0;
+}
+.footer .text-center .languages-list {
+  display: inline;
+  margin-left: 0;
+}
+.footer .text-center .copyright {
   line-height: 1.6;
   color: #545E6C;
   font-size: 13px;
 }
-.footer .fa-heart {
+.footer .text-center .fa-heart {
   color: #fb866a;
 }
 /* Extra small devices (phones, less than 768px) */

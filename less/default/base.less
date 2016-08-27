@@ -262,15 +262,27 @@ p {
 
 .footer {
     padding: 30px;
-    padding-top: 60px;
-    .copyright {
-        line-height: 1.6;
-        color: @text-color-secondary;
-        font-size: 13px;       
-    }  
-    
-    .fa-heart {
-        color: @heart;
+    padding-bottom:0;
+
+    .text-center {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .languages-list {
+            display: inline;
+            margin-left: 0;
+        }
+
+        .copyright {
+            line-height: 1.6;
+            color: @text-color-secondary;
+            font-size: 13px;       
+        }
+        
+        .fa-heart {
+            color: @heart;
+        }
     }
-    
 }

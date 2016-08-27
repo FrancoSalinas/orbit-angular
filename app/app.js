@@ -4,7 +4,7 @@ var app = angular.module('francoSalinasMendoza', [
     'pascalprecht.translate'
 ]);
 
-app.factory('content', ['$http', function($http){
+app.factory('content', ['$http', function($http) {
     return {
         get: function() {
             return $http.get('lang/es'); 
@@ -25,18 +25,27 @@ app.config(['$translateProvider', function($translateProvider) {
 
 app.controller('MainCtrl', [
     '$http',
+    '$translate',
     'content',
-    function($http, content) {
+    function($http, $translate, content) {
         controller = this;
-        content.get()
-        .success(function(data) {
-            controller.content = data;
-        })
-        .error(function(data, status, error, config) {
-            $http.get("objects/content.json")
+
+        controller.setLocale = function(lang) {
+            $translate.use(lang);
+
+            content.get()
             .success(function(data) {
                 controller.content = data;
+            })
+            .error(function(data, status, error, config) {
+                $http.get("objects/content.json")
+                .success(function(data) {
+                    controller.content = data;
+                });
             });
-        });
+            
+        }
+        
+        controller.setLocale('es');
     }
 ]);
