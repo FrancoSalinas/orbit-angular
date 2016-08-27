@@ -6,8 +6,8 @@ var app = angular.module('francoSalinasMendoza', [
 
 app.factory('content', ['$http', function($http) {
     return {
-        get: function() {
-            return $http.get('lang/es'); 
+        get: function(lang) {
+            return $http.get('lang/' + lang); 
         }
     };
 }]);
@@ -33,7 +33,7 @@ app.controller('MainCtrl', [
         controller.setLocale = function(lang) {
             $translate.use(lang);
 
-            content.get()
+            content.get(lang)
             .success(function(data) {
                 controller.content = data;
             })
