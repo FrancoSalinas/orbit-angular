@@ -20,7 +20,7 @@ gulp.task('js', function(){
     './app/app.js'])
     .pipe(concat('app.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./javascripts'))
 });
 
 gulp.task('serve', function() {
@@ -37,14 +37,14 @@ gulp.task('serve', function() {
 
   gulp.watch("./app/app.js", ['js']);
 
-  gulp.watch("./js/app.min.js")
+  gulp.watch("./javascripts/app.min.js")
   .on('change', browserSync.reload);
 });
 
 gulp.task('less', [], function() {
   return gulp.src('./less/default/styles.less')
   .pipe(less())
-  .pipe(gulp.dest('./css'))
+  .pipe(gulp.dest('./stylesheets'))
   .on('end', browserSync.reload);
 });
 
@@ -54,11 +54,11 @@ gulp.task('setup', [], function() {
   .pipe(gulp.dest('./fonts'));
 
   gulp.src('./bower_components/components-font-awesome/css/font-awesome.min.css')
-  .pipe(gulp.dest('./css'));
+  .pipe(gulp.dest('./stylesheets'));
 
   /* Set up bootstrap css.  */
   gulp.src('./bower_components/bootstrap-css-only/css/bootstrap.min.css')
-  .pipe(gulp.dest('./css'));
+  .pipe(gulp.dest('./stylesheets'));
 })
 
 gulp.task('build', [], function() {
