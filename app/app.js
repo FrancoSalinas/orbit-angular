@@ -1,7 +1,8 @@
 var app = angular.module('francoSalinasMendoza', [
     'ui.bootstrap',
     'ngSanitize',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'slugifier'
 ]);
 
 app.factory('content', ['$http', function($http) {

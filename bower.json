@@ -21,6 +21,7 @@
     "angular-sanitize": "^1.5.8",
     "angular-cookie": "^4.1.0",
     "angular-translate-loader-static-files": "^2.11.1",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "angular-slugify": "^1.0.1"
   }
 }

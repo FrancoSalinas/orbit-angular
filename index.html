@@ -102,7 +102,7 @@
             </section><!--//section-->   
             <section class="section projects-section">
                 <h2 class="section-title"><i class="fa fa-archive"></i><span translate="projects"></span></h2>
-                <div class="item" id="{{main.content.project.name}}" ng-repeat="project in main.content.project_list">
+                <div class="item" ng-repeat="project in main.content.project_list" id="{{project.name | slugify}}">
                     <h3 class="project-title"><a ng-href="{{project.link}}" ng-bind="project.name"></a></h3>
                     <p ng-bind-html="project.description"></p>                 
                 </div><!--//item-->
