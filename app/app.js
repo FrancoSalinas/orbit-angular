@@ -49,11 +49,8 @@ app.controller('MainCtrl', [
         }
 
         var lang = $cookieStore.get('lang');
-        alert(lang);
         lang = lang || (window.navigator.languages ? window.navigator.languages[0] : null);
-        alert(lang);
         lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage || 'es';
-        alert(lang);
         if (lang.indexOf('-') !== -1)
         {
             lang = lang.split('-')[0];
@@ -64,7 +61,6 @@ app.controller('MainCtrl', [
             lang = lang.split('_')[0];
         }
         
-        alert(lang);
         controller.setLocale(lang);
     }
 ]);
