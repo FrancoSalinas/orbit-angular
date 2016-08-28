@@ -43,7 +43,14 @@ app.controller('MainCtrl', [
                 $cookieStore.put('lang', lang);
             })
             .error(function(data, status, error, config) {
-                alert("couldn't laod content.");
+                if (lang == 'en')
+                {
+                    alert("couldn't load content.");
+                }
+                else
+                {
+                    controller.setLocale('en');
+                }
             });
             
         }
