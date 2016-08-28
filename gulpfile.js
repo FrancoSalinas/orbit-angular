@@ -13,6 +13,7 @@ gulp.task('js', function(){
     './bower_components/angular/angular.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     './bower_components/angular-sanitize/angular-sanitize.min.js',
+    './bower_components/angular-cookies/angular-cookies.min.js',
     './bower_components/angular-translate/angular-translate.min.js',
     './bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
     './bower_components/angular-slugify/angular-slugify.js',
