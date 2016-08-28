@@ -1,0 +1,12 @@
+{
+    "curriculum" : "Resume",
+    "education" : "Education",
+    "languages" : "Languages",
+    "interests" : "Interests",
+    "about me" : "About me",
+    "experience" : "Experience",
+    "projects" : "Personal Projects",
+    "skills" : "Skills",
+    "language" : "Language",
+    "copyright" : "This work, 'orbit-angular', is a derivative of the <a href='http://themes.3rdwavemedia.com' target='_blank'>Orbit theme</a> by Xiaoying Riley, used under CC BY. 'orbit-angular' is licensed under CC BY by Franco J. Salinas Mendoza."
+}
