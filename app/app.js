@@ -9,7 +9,7 @@ var app = angular.module('francoSalinasMendoza', [
 app.factory('content', ['$http', function($http) {
     return {
         get: function(lang) {
-            return $http.get('lang/' + lang); 
+            return $http.get('content/' + lang); 
         }
     };
 }]);
