@@ -37,20 +37,20 @@
                 <h3 class="tagline" ng-bind="main.content.tagline"></h3>
             </div><!--//profile-container-->
             
-            <div class="contact-container container-block">
+            <div class="contact-container container-block" ng-if="main.content.address_list && main.content.address_list.length > 0">
                 <ul class="list-unstyled contact-list">
                     <li ng-repeat="address in main.content.address_list"><i ng-class="'fa ' + address.icon"></i><a ng-href="{{address.link}}" ng-bind="address.show"></a></li>
                 </ul>
             </div><!--//contact-container-->
 
-            <div class="resume-container container-block">
+            <div class="resume-container container-block" ng-if="main.content.curriculum_list && main.content.curriculum_list.length > 0">
                 <h2 class="container-block-title" translate="curriculum"></h2>
                 <ul class="list-unstyled curriculum-list" ng-repeat="curriculum in main.content.curriculum_list">
                     <li><a ng-href="{{curriculum.link}}" ng-bind="curriculum.name"></a></li>
                 </ul>
-            </div><!--//education-container-->
+            </div><!--//resume-container-->
 
-            <div class="education-container container-block">
+            <div class="education-container container-block" ng-if="main.content.degree_list && main.content.degree_list.length > 0">
                 <h2 class="container-block-title" translate="education"></h2>
                 <div class="item" ng-repeat="degree in main.content.degree_list">
                     <h4 class="degree" ng-bind="degree.name"></h4>
@@ -59,16 +59,16 @@
                 </div><!--//item-->
             </div><!--//education-container-->
             
-            <div class="languages-container container-block">
+            <div class="languages-container container-block" ng-if="main.content.language_list && main.content.language_list.length > 0">
                 <h2 class="container-block-title" translate="languages"></h2>
                 <ul class="list-unstyled interests-list">
                     <li ng-repeat="language in main.content.language_list">
                         <span ng-bind="language.name"></span> <span class="lang-desc" ng-bind="language.level"></span>
                     </li>
                 </ul>
-            </div><!--//interests-->
-            
-            <div class="interests-container container-block">
+            </div><!--//languages-->
+
+            <div class="interests-container container-block" ng-if="main.content.interest_list && main.content.interest_list.length > 0">
                 <h2 class="container-block-title" translate="interests"></h2>
                 <ul class="list-unstyled interests-list">
                     <li ng-repeat="interest in main.content.interest_list" ng-bind="interest"></li>
@@ -78,15 +78,15 @@
         </div><!--//sidebar-wrapper-->
         
         <div class="main-wrapper">
-            <section class="section summary-section">
+            <section class="section summary-section" ng-if="main.content.about_me">
                 <h2 class="section-title"><i class="fa fa-user"></i><span translate="about me"></span></h2>
                 <div class="summary">
                     <p ng-bind="main.content.about_me"></p>
                 </div><!--//summary-->
             </section><!--//section-->
             
-            <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i><span translate="experience"></span></h2>                
+            <section class="section experiences-section" ng-if="main.content.experience_list && main.content.experience_list.length > 0">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i><span translate="experience"></span></h2>
                 <div class="item" ng-repeat="experience in main.content.experience_list">
                     <div class="meta">
                         <div class="upper-row">
@@ -98,9 +98,10 @@
                     <div class="details">
                         <p ng-bind-html="experience.description"></p>
                     </div><!--//details-->
-                </div><!--//item-->      
-            </section><!--//section-->   
-            <section class="section projects-section">
+                </div><!--//item-->
+            </section><!--//section-->
+
+            <section class="section projects-section" ng-if="main.content.project_list && main.content.project_list.length > 0">
                 <h2 class="section-title"><i class="fa fa-archive"></i><span translate="projects"></span></h2>
                 <div class="item" ng-repeat="project in main.content.project_list" id="{{project.name | slugify}}">
                     <h3 class="project-title"><a ng-href="{{project.link}}" ng-bind="project.name"></a></h3>
@@ -108,7 +109,7 @@
                 </div><!--//item-->
             </section><!--//section-->
             
-            <section class="skills-section section">
+            <section class="skills-section section" ng-if="main.content.skill_list && main.content.skill_list.length > 0">
                 <h2 class="section-title"><i class="fa fa-rocket"></i><span translate="skills"></span></h2>
                 <div class="skillset">        
                     <div class="item" ng-repeat="skill in main.content.skill_list">
