@@ -59,6 +59,15 @@
                 </div><!--//item-->
             </div><!--//education-container-->
             
+            <div class="awards-container container-block" ng-if="main.content.award_list && main.content.award_list.length > 0">
+                <h2 class="container-block-title" translate="awards"></h2>
+                <div class="item" ng-repeat="award in main.content.award_list">
+                    <h4 class="award" ng-bind="award.name"></h4>
+                    <h5 class="meta" ng-bind="award.where"></h5>
+                    <div class="time" ng-bind="award.when"></div>
+                </div><!--//item-->
+            </div><!--//awards-container-->
+
             <div class="languages-container container-block" ng-if="main.content.language_list && main.content.language_list.length > 0">
                 <h2 class="container-block-title" translate="languages"></h2>
                 <ul class="list-unstyled interests-list">
