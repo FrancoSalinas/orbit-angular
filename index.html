@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="ie8" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->  
-<!--[if IE 9]> <html class="ie9" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->  
-<!--[if !IE]><!--> <html ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}"> <!--<![endif]-->  
+<!--[if IE 8]> <html class="ie8" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->
+<!--[if IE 9]> <html class="ie9" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->
+<!--[if !IE]><!--> <html ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}"> <!--<![endif]-->
 <head>
     <title>Franco Salinas Mendoza</title>
     <!-- Meta -->
@@ -9,24 +9,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Franco Javier Salinas Mendoza">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <script src="javascripts/app.min.js"></script>
 
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">   
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
-    
-    <!-- Theme CSS -->  
+
+    <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="stylesheets/styles.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head> 
+</head>
 
 <body>
     <div class="container">
@@ -37,7 +37,7 @@
                 <h1 class="name" ng-bind="main.content.name"></h1>
                 <h3 class="tagline" ng-bind="main.content.tagline"></h3>
             </div><!--//profile-container-->
-            
+
             <div class="contact-container container-block" ng-if="main.content.address_list && main.content.address_list.length > 0">
                 <ul class="list-unstyled contact-list">
                     <li ng-repeat="address in main.content.address_list"><i ng-class="'fa ' + address.icon"></i><a ng-href="{{address.link}}" ng-bind="address.show"></a></li>
@@ -59,7 +59,7 @@
                     <div class="time" ng-bind="degree.when"></div>
                 </div><!--//item-->
             </div><!--//education-container-->
-            
+
             <div class="awards-container container-block" ng-if="main.content.award_list && main.content.award_list.length > 0">
                 <h2 class="container-block-title" translate="awards"></h2>
                 <div class="item" ng-repeat="award in main.content.award_list">
@@ -84,9 +84,9 @@
                     <li ng-repeat="interest in main.content.interest_list" ng-bind="interest"></li>
                 </ul>
             </div><!--//interests-->
-            
+
         </div><!--//sidebar-wrapper-->
-        
+
         <div class="col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4 main-wrapper">
             <section class="section summary-section" ng-if="main.content.about_me">
                 <h2 class="section-title"><i class="fa fa-user"></i><span translate="about me"></span></h2>
@@ -94,7 +94,7 @@
                     <p ng-bind="main.content.about_me"></p>
                 </div><!--//summary-->
             </section><!--//section-->
-            
+
             <section class="section experiences-section" ng-if="main.content.experience_list && main.content.experience_list.length > 0">
                 <h2 class="section-title"><i class="fa fa-briefcase"></i><span translate="experience"></span></h2>
                 <div class="item" ng-repeat="experience in main.content.experience_list">
@@ -115,23 +115,23 @@
                 <h2 class="section-title"><i class="fa fa-archive"></i><span translate="projects"></span></h2>
                 <div class="item" ng-repeat="project in main.content.project_list" id="{{project.name | slugify}}">
                     <h3 class="project-title"><a ng-href="{{project.link}}" ng-bind="project.name"></a></h3>
-                    <p ng-bind-html="project.description"></p>                 
+                    <p ng-bind-html="project.description"></p>
                 </div><!--//item-->
             </section><!--//section-->
-            
+
             <section class="skills-section section" ng-if="main.content.skill_list && main.content.skill_list.length > 0">
                 <h2 class="section-title"><i class="fa fa-rocket"></i><span translate="skills"></span></h2>
-                <div class="skillset">        
+                <div class="skillset">
                     <div class="item" ng-repeat="skill in main.content.skill_list">
                         <h3 class="level-title" ng-bind="skill.name"></h3>
-                        <uib-progressbar value="skill.level"></uib-progressbar>                
+                        <uib-progressbar value="skill.level"></uib-progressbar>
                     </div><!--//item-->
-                </div>  
+                </div>
             </section><!--//skills-section-->
-            
+
         </div><!--//main-body-->
     </div>
- 
+
     <footer class="footer">
         <div class="text-center">
             <span translate="language"></span> :
@@ -147,5 +147,5 @@
     </footer><!--//footer-->
     </div class="container">
 </body>
-</html> 
+</html>
 
