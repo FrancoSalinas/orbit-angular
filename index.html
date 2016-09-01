@@ -29,8 +29,9 @@
 </head> 
 
 <body>
-    <div class="wrapper">
-        <div class="sidebar-wrapper">
+    <div class="container">
+    <div class="row wrapper">
+        <div class="col-sm-5 col-sm-push-7 col-md-4 col-md-push-8 sidebar-wrapper">
             <div class="profile-container">
                 <img class="profile" src="images/profile.png" alt="Foto de perfil" />
                 <h1 class="name" ng-bind="main.content.name"></h1>
@@ -86,7 +87,7 @@
             
         </div><!--//sidebar-wrapper-->
         
-        <div class="main-wrapper">
+        <div class="col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4 main-wrapper">
             <section class="section summary-section" ng-if="main.content.about_me">
                 <h2 class="section-title"><i class="fa fa-user"></i><span translate="about me"></span></h2>
                 <div class="summary">
@@ -144,6 +145,7 @@
                 <small class="copyright" translate="copyright"></small>
         </div><!--//container-->
     </footer><!--//footer-->
+    </div class="container">
 </body>
 </html> 
 
