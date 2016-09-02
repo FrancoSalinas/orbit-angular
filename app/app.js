@@ -21,7 +21,7 @@ app.config(['$translateProvider', function($translateProvider) {
         suffix: '.json'
     })
     .useSanitizeValueStrategy('sanitizeParameters')
-    .preferredLanguage('es');
+    .preferredLanguage('en');
 }]);
 
 app.controller('MainCtrl', [
