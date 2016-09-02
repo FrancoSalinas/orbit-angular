@@ -1,0 +1,25 @@
+{
+  "name": "francosalinasmendoza",
+  "description": "Franco Javier Salinas Mendoza personal website.",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-bootstrap": "^2.0.1",
+    "components-font-awesome": "~4.5.0",
+    "bootstrap-css-only": "^3.3.6",
+    "angular-sanitize": "^1.5.8",
+    "angular-translate-loader-static-files": "^2.11.1",
+    "angular-slugify": "^1.0.1",
+    "angular-cookies": "^1.5.8"
+  }
+}

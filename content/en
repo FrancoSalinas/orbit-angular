@@ -1,0 +1,107 @@
+{
+    "about_me": "Summarise your career here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.",
+    "tagline": "Full Stack Developer",
+    "name": "Alan Doe",
+    "skill_list": [
+        {
+            "level": 98,
+            "name": "Python & Django"
+        },
+        {
+            "level": 98,
+            "name": "Javascript & jQuery"
+        },
+        {
+            "level": 98,
+            "name": "Angular"
+        },
+        {
+            "level": 95,
+            "name": "HTML5 & CSS"
+        },
+        {
+            "level": 85,
+            "name": "Ruby on Rails"
+        },
+        {
+            "level": 60,
+            "name": "Sketch & Photoshop"
+        }
+    ],
+    "project_list": [
+        {
+            "description": "A responsive website template designed to help startups promote, market and sell their products.",
+            "link": "#",
+            "name": "Velocity"
+        },
+        {
+            "description": "A responsive website template designed to help web developers/designers market their services.",
+            "link": "http://example.com",
+            "name": "DevStudio"
+        }
+    ],
+    "experience_list": [
+        {
+            "description": "<p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>",
+            "where": "Startup Hubs, San Francisco",
+            "when": "2015 - Present",
+            "name": "Lead Developer"
+        },
+        {
+            "description": "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+            "where": "Google, London",
+            "when": "2014 - 2015",
+            "name": "Senior Software Engineer"
+        }
+    ],
+    "interest_list": [
+        "Climbing",
+        "Snowboarding",
+        "Cooking"
+    ],
+    "language_list": [
+        {
+            "level": "Mothertongue",
+            "name": "English"
+        },
+        {
+            "level": "Professional",
+            "name": "Spanish"
+        },
+        {
+            "level": "Professional",
+            "name": "French"
+        }
+    ],
+    "degree_list": [
+        {
+            "when": "2011 - 2012",
+            "where": "University of London",
+            "name": "MSc in Computer Science"
+        },
+        {
+            "when": "2007 - 2011",
+            "where": "Bristol University",
+            "name": "BSc in Applied Mathematics"
+        }
+    ],
+    "address_list": [
+        {
+            "link": "mailto: alan.doe@website.com",
+            "show": "alandoe@website.com",
+            "icon": "fa fa-envelope"
+        },
+        {
+            "link": "tel: 0123 456 789",
+            "show": "0123 456 789",
+            "icon": "fa fa-phone"
+        },
+        {
+            "link": "#",
+            "show": "linkedin.com/in/alandoe",
+            "icon": "fa fa-linkedin"
+        }
+    ],
+    "language": "en",
+    "id": "en"
+}

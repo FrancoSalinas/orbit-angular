@@ -1,0 +1,14 @@
+{
+    "profile picture" : "Foto de perfil",
+    "curriculum" : "Curriculum",
+    "education" : "Educación",
+    "awards" : "Distinciones",
+    "languages" : "Idiomas",
+    "interests" : "Intereses",
+    "about me" : "Perfil",
+    "experience" : "Experiencia",
+    "projects" : "Proyectos Personales",
+    "skills" : "Conocimientos",
+    "language" : "Idioma",
+    "copyright" : "Este trabajo, <a href='https://github.com/FrancoSalinas/orbit-angular'>orbit-angular</a>, es una obra derivada de <a href='http://themes.3rdwavemedia.com' target='_blank'>Orbit theme</a> por Xiaoying Riley, usado bajo licencia CC BY. 'orbit-angular' se distribuye bajo licencia CC BY por Franco J. Salinas Mendoza."
+}
