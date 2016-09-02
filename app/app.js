@@ -9,7 +9,7 @@ var app = angular.module('francoSalinasMendoza', [
 app.factory('content', ['$http', function($http) {
     return {
         get: function(lang) {
-            return $http.get('content/' + lang); 
+            return $http.get('content/' + lang);
         }
     };
 }]);
@@ -52,7 +52,7 @@ app.controller('MainCtrl', [
                     controller.setLocale('en');
                 }
             });
-            
+
         }
 
         var lang = $cookieStore.get('lang');
@@ -67,7 +67,7 @@ app.controller('MainCtrl', [
         {
             lang = lang.split('_')[0];
         }
-        
+
         controller.setLocale(lang);
     }
 ]);
