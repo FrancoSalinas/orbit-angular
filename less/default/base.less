@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6  {
 
 a {
     color: @theme-color;
-    .transition (all 0.4s ease-in-out);
+    .transition(all 0.4s ease-in-out);
     &:hover {
         text-decoration: underline;
         color: darken(@theme-color, 30%);
@@ -31,19 +31,12 @@ p {
 
 .wrapper {
     background:@theme-color;
-    max-width: 1280px;
-    margin: 0 auto;
-    position: relative;
     .box-shadow(0px 2px 4px rgba(0,0,0,0.1));
 }
 
 .sidebar-wrapper {
+    padding: 0 !important;
     background: @theme-color;
-    position: absolute;
-    right: 0;
-    width: 360px;
-    height: 100%;
-    min-height: 800px;
     color: #fff;
     a {
         color: #fff;
@@ -99,6 +92,11 @@ p {
         margin-top: 0;
         margin-bottom: 5px;
     }
+    .award {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
     .resume-list {
         margin-bottom: 0;
         li {
@@ -108,7 +106,7 @@ p {
             }
         }
     }
-    .education-container {
+    .education-container, .awards-container {
         .item {
             margin-bottom: 15px;
             &:last-child {
@@ -162,7 +160,6 @@ p {
 .main-wrapper {
     background: #fff;
     padding: 60px;
-    padding-right: 420px;
     .section-title {
         text-transform: uppercase;
         font-size: 20px;

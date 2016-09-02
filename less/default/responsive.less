@@ -1,11 +1,6 @@
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) { 
     
-    .sidebar-wrapper {
-        position: static;
-        width: inherit;
-    }
-    
     .main-wrapper {
         padding: 30px;
     }
@@ -24,8 +19,17 @@
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+
+    .wrapper {
+        display: table;
+        table-layout: fixed;
+    }
+
+    .wrapper [class^="col-"] {
+        display: table-cell;
+        float: none;
+    }
      
-    
 }
 
 /* Medium devices (desktops, 992px and up) */
