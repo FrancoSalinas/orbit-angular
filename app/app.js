@@ -1,4 +1,4 @@
-var app = angular.module('francoSalinasMendoza', [
+var app = angular.module('orbit-angular', [
     'ui.bootstrap',
     'ngSanitize',
     'ngCookies',

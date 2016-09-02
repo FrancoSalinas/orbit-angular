@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="ie8" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->
-<!--[if IE 9]> <html class="ie9" ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->
-<!--[if !IE]><!--> <html ng-app="francoSalinasMendoza" ng-controller="MainCtrl as main" lang="{{main.content.language}}"> <!--<![endif]-->
+<!--[if IE 8]> <html class="ie8" ng-app="orbit-angular" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->
+<!--[if IE 9]> <html class="ie9" ng-app="orbit-angular" ng-controller="MainCtrl as main" lang="{{main.content.language}}" > <![endif]-->
+<!--[if !IE]><!--> <html ng-app="orbit-angular" ng-controller="MainCtrl as main" lang="{{main.content.language}}"> <!--<![endif]-->
 <head>
-    <title>Franco Salinas Mendoza</title>
+    <title ng-bind="main.content.name"></title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Franco Javier Salinas Mendoza">
+    <meta name="description" content="{{main.content.name}}">
     <meta name="author" content="Franco Javier Salinas Mendoza">
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
