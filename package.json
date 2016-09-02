@@ -16,10 +16,12 @@
   "dependencies": {
     "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
     "gulp-copy": "0.0.2",
     "gulp-less": "^3.1.0",
     "gulp-uglify": "^2.0.0",
+    "merge-stream": "^1.0.0",
     "run-sequence": "^1.2.2"
   }
 }
