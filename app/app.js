@@ -57,7 +57,7 @@ app.controller('MainCtrl', [
 
         var lang = $cookieStore.get('lang');
         lang = lang || (window.navigator.languages ? window.navigator.languages[0] : null);
-        lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage || 'es';
+        lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage || 'en';
         if (lang.indexOf('-') !== -1)
         {
             lang = lang.split('-')[0];
