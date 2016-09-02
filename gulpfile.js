@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp         = require('gulp');
+var gulp         = require('gulp-help')(require('gulp'));
 var less         = require('gulp-less');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
@@ -10,7 +10,7 @@ var browserSync  = require('browser-sync');
 var cleanCSS     = require('gulp-clean-css');
 var merge        = require('merge-stream');
 
-gulp.task('js', function(){
+gulp.task('js', 'Concatenate and minifies all the js dependencies with the app.js file.', [], function(){
     return gulp.src([
         './bower_components/angular/angular.min.js',
         './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
@@ -26,7 +26,7 @@ gulp.task('js', function(){
     .pipe(gulp.dest('./javascripts'))
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', 'Start a web server and automatically refresh the browser when the source files change.', [], function() {
     browserSync({
         open: false,
         server: {
@@ -45,7 +45,7 @@ gulp.task('serve', function() {
     .on('change', browserSync.reload);
 });
 
-gulp.task('css', [], function() {
+gulp.task('css', 'Compile the less files and concatenate them with the css dependencies. Minify the result.', [], function() {
     var lessStream = gulp.src([
         './less/default/styles.less'
     ])
@@ -67,14 +67,14 @@ gulp.task('css', [], function() {
     return mergedStream;
 });
 
-gulp.task('setup', [], function() {
+gulp.task('setup', 'Set up the project, copying the necessary files to the working directories.', [], function() {
     /* Set up awesome font. */
     gulp.src('./bower_components/components-font-awesome/fonts/*.*')
     .pipe(gulp.dest('./fonts'));
 })
 
-gulp.task('build', [], function() {
+gulp.task('build', 'Compile both, js and css files.', [], function() {
     runSequence('js', 'css');
 });
 
-gulp.task('default', ['build'], function() {});
+gulp.task('default', false, ['help'], function() {});
